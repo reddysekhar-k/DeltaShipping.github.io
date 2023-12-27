@@ -663,7 +663,7 @@ h6,
 }
 .active-content {
 	width: 100%;
-	margin: 50px ;
+	margin: 20px ;
 }
 .active-content img{
 	width: 100%;
@@ -691,7 +691,7 @@ h6,
 }
 .active-content-1 img{
 	height: 300px;
-	margin-top: 80px;
+	margin-top: 10px;
 }
 
 @media (max-width:786px) {
@@ -988,25 +988,13 @@ h6,
 	color: #fff;
 	font-size: 18px;
 }
-.transport-header button {
-	margin-top: 30px;
-	padding: 10px 30px;
-	border-radius: 50px;
-	background: #2786cb;
-	border:1px solid #47b2e4;
-	color: white;
-	border: none;
-	font-size: 20px;
-}
-.transport-header button:hover{
-background: #47b2e4;
-color: #fff;
-}
+
+
 
 @media (max-width:786px) {
 	.transport-content{
 		width: 100%;
-		height: 135vh;
+		height: 125vh;
 	}
 	.transport {
 		display: flex;
