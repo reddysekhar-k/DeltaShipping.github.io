@@ -848,3 +848,19 @@ function validateMobile(mobile) {
 	const re = /^\d{10}$/;
 	return re.test(mobile);
 }
+
+
+
+//
+
+// function nhaDYGMxoc3JM7iYv() {
+// 	var params = {
+// 		firstname: document.getElementById("fullname").value,
+// 		email: document.getElementById("Email_id").value,
+// 		subject: document.getElementById("Subject").value,
+// 		message: document.getElementById("Message").value
+// 	}
+// 	emailjs.send("service_b9b63nl	", "template_t9knwrp	", params).then(function (res) {
+// 		alert("Success! " + res.status);
+// 	})
+// }

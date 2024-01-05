@@ -10,6 +10,9 @@
 	--light: #eef9ff;
 	--dark: #091e3e;
 }
+body{
+	width: 100%;
+}
 #logoimage {
 	padding: 7px;
 	margin: auto;
@@ -147,7 +150,7 @@ h6,
 	/* font-family: "Nunito", sans-serif; */
 	position: relative;
 	margin-left: 25px;
-	padding: 35px 0;
+	padding: 20px;
 	color: #ffffff;
 	/* font-size: 18px; */
 	font-weight: 600;
@@ -156,13 +159,19 @@ h6,
 }
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
-	padding: 20px 0;
+	padding: 20px 20px;
 	color: var(--dark);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
 	color: var(--primary);
+	background-color: #091e3e;
+	border-radius: 30%;
+	
+	
+	
+	
 }
 
 .navbar-dark .navbar-brand h1 {
@@ -525,6 +534,7 @@ h6,
 		margin-bottom: -75px;
 	}
 }
+
 
 /* ---------career-page css--------------------------------------------- */
 
@@ -1225,9 +1235,13 @@ font-family: 'Roboto', sans-serif;
 	.summary-content p{
 		font-size: 20px;
 		margin: 0 auto;
+	}	
+}
+
+@media(max-width:500px) {
+	.back-to-button{
+		display: none;
 	}
-	
-	
 }
 
 
