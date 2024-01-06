@@ -1,475 +1,1353 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
-<!-- https://www.vishalshipping.com/ -->
+  <!-- https://www.vishalshipping.com/ -->
 
-<head>
-	<meta charset="utf-8" />
-	<title>Home</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="Free HTML Templates" name="keywords" />
-	<meta content="Free HTML Templates" name="description" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
 
-	<!-- Favicon -->
-	<link rel="icon" href="img/shipping/DSA Logo.jpg" sizes="32x32" />
+    <!-- Favicon -->
+    <link rel="icon" href="img/shipping/DSA Logo.jpg" sizes="32x32" />
 
-	<!-- Google Web Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com/" />
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;family=Rubik:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* Container styling */
+      .news-ticker-container {
+        height: 40px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #3498db;
+        /* Blue background color */
+        color: #fff;
+        /* White text color */
+        font-family: "Arial", sans-serif;
+        /* Use a clear and common font */
+        padding: 10px 0;
+        /* Add some padding for better readability and aesthetics */
+        display: flex;
+        align-items: center;
+        /* Center content vertically */
+        justify-content: center;
+        /* Center content horizontally */
+      }
+
+      /* Ticker list styling */
+      #news-ticker {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        animation: tickerAnimation 20s linear infinite;
+      }
+
+      /* Keyframe animation */
+      @keyframes tickerAnimation {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Individual news item styling */
+      #news-ticker li {
+        display: inline-block;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      /* News sticker styling */
+      .new-sticker {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: #e74c3c;
+        /* Red background color for contrast */
+        color: #fff;
+        /* White text color */
+        border-radius: 4px;
+        margin-right: 8px;
+        font-weight: bold;
+      }
+
+      /* Hover effect for better user interaction */
+      #news-ticker li:hover {
+        background-color: #2c3e50;
+        /* Darker background color on hover */
+        cursor: pointer;
+      }
+
+      /* Responsive styling for smaller screens */
+      @media screen and (max-width: 768px) {
+        #news-ticker li {
+          font-size: 14px;
+        }
+
+        .new-sticker {
+          margin-right: 4px;
+        }
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal.active {
+        display: block;
+        /* or visibility: visible; */
+      }
+
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        position: relative;
+        text-align: center;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        /* background: #101224; */
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .world-map {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1em;
+        position: relative;
+      }
+
+      /* .world-map img {
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        max-width: 100%; max-height: 100%
+      } */
+      /* .india-map-img {
+        width: 80%;
+        height: 100%;
+        object-fit: contain;
+        align-items: center;
+      } */
+      .title {
+        text-align: center;
+        color: #fff;
+        margin: 2em 0;
+        padding: 0 1em;
+      }
+      .title p {
+        max-width: 500px;
+        margin: 1em auto;
+        line-height: 27px;
+      }
+      .pin {
+        background: #4362f8;
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        border-radius: 50%;
+      }
+      .pin::before {
+        content: "";
+        background: #4362f8;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: pulse 1.3s ease-in-out infinite;
+      }
+      .pin span {
+        display: inline-block;
+        white-space: nowrap;
+        position: absolute;
+        left: 1.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border-radius: 3em;
+        padding: 0.3em 0.6em;
+        font-size: 0.9em;
+      }
+      .pin.Qatar {
+        top: 55%; /* Adjust the top percentage */
+        left: 57%; /* Adjust the left percentage */
+      }
+
+      .pin.Kochi {
+        top: 84%; /* Adjust the top percentage */
+        left: 36%; /* Adjust the left percentage */
+      }
+      /* Hide India map by default */
+      .india-map {
+        display: none;
+      }
+
+      @keyframes pulse {
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(2.5);
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        /* Adjust the position of the pins for mobile screens */
+        .pin {
+          font-size: 12px; /* Modify font size for smaller screens */
+        }
+
+        /* Adjust the position of the Qatar pin on the world map */
+        .pin.Qatar {
+          top: 55%; /* Adjust the top position as needed */
+          left: 56%; /* Adjust the left position as needed */
+          transform: translate(-50%, -50%);
+        }
+
+        /* Adjust the position of the Kochi pin on the India map */
+        .pin.Kochi {
+          top: 82%; /* Adjust the top position as needed */
+          left: 42%; /* Adjust the left position as needed */
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .world-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh; /* Set a height for the map container */
+      }
+
+      .map-container {
+        position: relative;
+        max-width: 100%; /* Maximum width */
+        max-height: 100%; /* Maximum height */
+        overflow: hidden;
+      }
+
+      .india-map-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Maintain aspect ratio */
+      }
+      .world-map-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    </style>
+
+    <style>
+      /* service */
+      #service {
+        width: 100%;
+        padding: 0;
+        background: #efefef;
+        display: block;
+        padding-bottom: 140px;
+      }
+
+      .service-box {
+        width: 100%;
+        display: flex;
+        height: 110%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: auto;
+      }
+
+      .single-service {
+        flex-basis: 48%;
+        text-align: center;
+        border-radius: 7px;
+        margin-bottom: 20px;
+        color: #fff;
+        position: relative;
+      }
+
+      .single-service img {
+        width: 100%;
+        border-radius: 7px;
+      }
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        border-radius: 7px;
+        cursor: pointer;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), #4e669c);
+        opacity: 0;
+        transition: 1s;
+      }
+
+      .single-service:hover .overlay {
+        opacity: 1;
+      }
+
+      .service-desc {
+        width: 80%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%);
+        transition: 1s;
+        font-size: 25px;
+      }
+
+      hr {
+        background: #fff;
+        height: 2px;
+        border: 0;
+        margin: 15px auto;
+        width: 60%;
+      }
+
+      .service-desc p {
+        font-size: 17px;
+      }
+
+      .single-service:hover .service-desc {
+        bottom: 40%;
+        opacity: 1;
+      }
+
+      @media screen and (max-width: 770px) {
+        .single-service {
+          flex-basis: 100%;
+          margin-bottom: 30px;
+        }
+
+        .service-desc p {
+          font-size: 12px;
+        }
+
+        hr {
+          margin: 5px auto;
+        }
+
+        .single-service:hover .service-desc {
+          bottom: 25% !important;
+        }
+      }
+    </style>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content-section {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .address-section,
+      .map-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Adjust the heights to match as needed */
+      .address-section {
+        min-height: 200px; /* Example height for the address section */
+      }
+
+      /* Match the height of map sections to address section */
+      .world-map,
+      .india-map {
+        flex: 1;
+      }
+
+      /* Default styles for larger screens */
+      .containerbranch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .address-section,
+      .map-section {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .address-world,
+      .address-india {
+        margin-bottom: 20px;
+      }
+
+      .world-map,
+      .india-map {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Media query for smaller screens (e.g., mobile devices) */
+      @media screen and (max-width: 768px) {
+        .content-section {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .address-section,
+        .map-section {
+          width: 100%;
+        }
+
+        .world-map,
+        .india-map {
+          height: 200px; /* Set a specific height for better mobile display */
+        }
+      }
+    </style>
+    <style>
+      /* ABOUTUSSECTION */
+  .about-header  {
+	color: white;
+	background: #1e2235;
+	width: 40%;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	margin-bottom: 30px;
+	border-start-end-radius:200px;
+}
+@media (max-width:786px) {
+	.about-header{
+		width: 100%;
+	}
+	.about-header h2{
+		width :80%;
+	}
+}
+/* ACTIVITIES */
+#activities{
+    margin-top: 50px;
+    background: #eef9ff;
+
+}
+#activities h2{
+    color: white;
+    background: #1e2235;
+    width: 30%;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    border-start-end-radius: 200px;
+}
+.active-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.active-content {
+    width: 100%;
+    margin: 20px ;
+}
+.active-content img{
+    width: 100%;
+}
+.active-content h3{
+    font-family: 'Lora', serif;
+    /* margin-top: 20px; */
+
+}
+.active-content p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+
+}
+.active-content-1 {
+    width: 100%;
+    margin: 0px 100px;
+
+}
+.active-content-1 h3{
+    font-family: 'Lora', serif;
+    /* font-size: 32px; */
+
+}
+.active-content-1 p{
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Cookie', cursive; */
+    font-size: 19px;
+
+}
+.active-content-1 img{
+    height: 300px;
+    margin-top: 10px;
+}
+
+@media (max-width:786px) {
+    #activities{
+        width: 100%;
+    }
+    #activities h2{
+        width: 90%;
+    }
+    .active-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .active-content h3,p{
+        margin-left: 20px;
+    }
+    .active-content-1 h3 {
+        margin-left: 20px;
+    }
+}
+/* <DELIVERIES> */
+  .delivery-container{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    margin: 100px 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 50px;
+}
+.dilivery-content {
+    display: flex;
+    flex-direction: row;
+
+}
+.dilivery-content i{
+    border: 1px solid #3194db;
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+.dilivery-content .fa-solid, .fa-brands{
+    margin-top: 30px;
+    margin-right: 30px;
+    font-size: 40px;
+    color: #3194db;
+    transition: .5s ease-in-out;
+}
+.dilivery-content h3{
+    font-family: 'Courier New', Courier, monospace;
+    color: #3194db;
+}
+.dilivery-content p{
+    font-family: 'Lora', serif;
+}
+.dilivery-content i:hover{
+    color: red;
+    border: 1px solid red;
+}
 
 
-	<!-- Icon Font Stylesheet -->
-	<link href="lib/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-	<link href="lib/cdn.jsdelivr.net/npm/bootstrap-icons%401.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+@media (max-width:786px) {
+    .delivery-container{
+        /* margin: 40px 20px; */
+        margin-bottom: 30PX;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .dilivery-content{
+        width: 100%;
+    }
+}
+/* container */
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+.container-div{
+    /* background: #208395be; */
+    background: rgb(44, 110, 99);
+    width: 100%;
+    height: 300px;
+  }
+  .container-div h2 {
+    margin: 0 100px;
+    color: white;
+  }
+  .container-div p{
+    font-family: 'Poppins', sans-serif;
+    margin: 0 100px;
+    font-size: 18px;
+    color: white;
+    
+  }
 
-	<!-- Libraries Stylesheet -->
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-	<link href="lib/animate/animate.min.css" rel="stylesheet" />
+  @media (max-width:786px) {
+    .container-div{
+        width: 100%;
+        height: 590px;
+    }
+    .container-div h2{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .container-div p{
+        width: 100%;
+        margin: 0 auto;
+        font-size: 19px;
+        margin-left: 5px;
+    }
+    
+  }
+  /* <transport> */
+    .transport-content{
+    margin-top: 100px;
+    width: 100%;
+    height:100vh;
+    /* background: url("../img/shipping/home3-bg.jpg"); */
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url("../img/shipping/13.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: sticky; */
+    overflow: hidden;
+    background-attachment: fixed;
+    
+}
+.transport{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.transport-image {
+    width: 100%;
+}
+.transport-image img{
+    margin: 100px auto;
+    width: 90%;
+}
 
-	<!-- Customized Bootstrap Stylesheet -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-
-	<!-- Template Stylesheet -->
-	<link href="css/style.css" rel="stylesheet" />
-	<style>
-		/* Container styling */
-		.news-ticker-container {
-			height: 40px;
-			width: 100%;
-			overflow: hidden;
-			background-color: #3498db;
-			/* Blue background color */
-			color: #fff;
-			/* White text color */
-			font-family: "Arial", sans-serif;
-			/* Use a clear and common font */
-			padding: 10px 0;
-			/* Add some padding for better readability and aesthetics */
-			display: flex;
-			align-items: center;
-			/* Center content vertically */
-			justify-content: center;
-			/* Center content horizontally */
-		}
-
-		/* Ticker list styling */
-		#news-ticker {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			white-space: nowrap;
-			animation: tickerAnimation 20s linear infinite;
-		}
-
-		/* Keyframe animation */
-		@keyframes tickerAnimation {
-			0% {
-				transform: translateX(100%);
-			}
-
-			100% {
-				transform: translateX(-100%);
-			}
-		}
-
-		/* Individual news item styling */
-		#news-ticker li {
-			display: inline-block;
-			padding: 10px;
-			font-size: 16px;
-		}
-
-		/* News sticker styling */
-		.new-sticker {
-			display: inline-block;
-			padding: 4px 8px;
-			background-color: #e74c3c;
-			/* Red background color for contrast */
-			color: #fff;
-			/* White text color */
-			border-radius: 4px;
-			margin-right: 8px;
-			font-weight: bold;
-		}
-
-		/* Hover effect for better user interaction */
-		#news-ticker li:hover {
-			background-color: #2c3e50;
-			/* Darker background color on hover */
-			cursor: pointer;
-		}
-
-		/* Responsive styling for smaller screens */
-		@media screen and (max-width: 768px) {
-			#news-ticker li {
-				font-size: 14px;
-			}
-
-			.new-sticker {
-				margin-right: 4px;
-			}
-		}
+.transport-header{
+    width: 100%;
+    margin: 100px 50px;
+}
+.transport-header h1{
+    font-family: 'Poppins', sans-serif;
+    color: #0680f3;
+    /* color: rgb(228, 7, 232); */
+}
+.transport-header p{
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 18px;
+}
 
 
-		/* Modal Styles */
-		.modal {
-			display: none;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0, 0, 0, 0.5);
-			justify-content: center;
-			align-items: center;
-		}
 
-		.modal.active {
-			display: block;
-			/* or visibility: visible; */
-		}
+@media (max-width:786px) {
+    .transport-content{
+        width: 100%;
+        height: 100vh;
+    }
+    .transport {
+        display: flex;
+        flex-direction: column;
+    }
+    .transport-image img{
+        margin: 0 auto;
+    }
+    .transport-image{
+      margin-top: 40px;
+        width: 100%;
+    }
+    .transport-header{
+        margin-top: -50px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .transport-header p{
+        font-size: 19px;
+    }
+}
+/* <summary> */
+  .summary{
+    margin:80px 0px ;
+    /* margin-top: 60px; */
+    display: flex;
+    flex-direction: row;
+    
+}
+.summary-container{
+    width: 100%;
 
-		.modal-content {
-			background-color: #fff;
-			padding: 20px;
-			border-radius: 5px;
-			position: relative;
-			text-align: center;
-		}
+}
 
-		.close {
-			position: absolute;
-			top: 10px;
-			right: 10px;
-			font-size: 20px;
-			cursor: pointer;
-		}
-	</style>
-</head>
+.summary-content{
+    width: 600px;
+    height: 500px;
+    border: 1px solid #124265;
+    text-align: center;
+    background: #124265;
+    color: #fff;
+}
+.summary-content h1{
+    font-family: 'Poppins', sans-serif;
+    margin-top: 80px;
+    color: #fff;
+    font-weight: 600;
+}
+.summary-content p{
+    
+font-family: 'Roboto', sans-serif;
+    margin: 70px 50px;
+    font-size: 20px;
+    font-weight: 200;
+}
 
-<body>
-	
 
-	<!-- Navbar & Carousel Start -->
-	<div class="container-fluid position-relative p-0">
-		<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-			<a href="index.html" class="navbar-brand p-0">
-				<img src="./img/image001.png" alt="logo" />
-				<!-- <img src="./img/shipping/delta4-logo.jpg" alt="logo" /> -->	
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-				<span class="fa fa-bars"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<div class="navbar-nav ms-auto py-0" style="font-family: 'Poppins', sans-serif;">
-					<a href="./index.html" class="nav-item nav-link active">Home</a>
-					<a href="#aboutUsContainer" class="nav-item nav-link">About Us</a>
-					
-					<a href="#Service-header" class="nav-item nav-link">Our Services</a>
-					<a href="#contact" class="nav-item nav-link">Contact Us</a>
-					<!-- <a href="#" class="nav-item nav-link">Whats App</a> -->
-				</div>
-			</div>
-		</nav>
 
-<!-- Image Slider -->
+.summary-background{
+    margin: 40px 40px;
+    margin-bottom: 7%;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
+}
 
-		<div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-			<div class="carousel-inner">
-				<div class="carousel-item mobile-styling active">
-					<img src="./img/slider-2.png" alt="" width="100%" height="600px">
-					<!-- <img class="w-100" alt="Image" id="homePageImage" /> -->
-					<div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-						<div class="p-3" style="max-width: 900px">
-							<h1 class="display-1 text-white mb-md-4 animated zoomIn" id="webAppName1">
-							</h1>
-							<h5 class="text-white text-uppercase mb-md-4 animated zoomIn" id="homePageWelcome"></h5>
-							<!-- <a id="whatsappButton2"
+@media (max-width:900px) {
+    .summary{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .summary-content{
+        height: 400px;
+        width: 100%;
+    }
+    .summary-content p{
+        font-size: 20px;
+        /* width: 100%; */
+        margin: 0 auto;
+    }
+    .summary-background{
+        margin:  0 auto;
+    }
+}
+@media (max-width:300px) {
+    
+    .summary-content{
+        height: 400px;
+        width: 100%;
+    }
+    .summary-content p{
+        font-size: 20px;
+        margin: 0 auto;
+    }   
+}
+/* <service> */
+  #Service-header{
+    margin-left: 50px;
+}
+#Service-header h2{
+    color: white;
+    background: #1e2235;
+    width: 30%;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-start-end-radius: 200px;
+}
+
+.service-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.service-content-1{
+    height: 300px;
+    font-family: 'Poppins', sans-serif;
+
+}
+.service-content-1 .header{
+    width:80%;
+    margin-left: 50px;
+    
+}
+.service-content-1 .header h5{
+    
+    margin-top: 25px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.service-content-1 .header p{
+    font-size: 19px;
+    word-spacing: 5px;
+    
+}
+.service-content-2{
+    font-family: 'Poppins', sans-serif;
+    height: 300px;
+    background: #47b2e4;
+}
+.service-content-2 .header{
+    
+    width:80%;
+    margin-left: 50px;
+}
+.service-content-2 .header h5{
+    margin-top: 25px;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.service-content-2 .header p{
+    color: #fff;
+    font-size: 19px;
+    word-spacing: 5px;
+}
+
+
+@media (max-width:786px) {
+    .service-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .service-content-1 .header h5 ,.service-content-2 .header h5{
+        width: 100%;
+        font-size: 21px;
+        margin: 20px auto;
+    }
+    #Service-header{
+        margin: 0 auto;
+    }
+    #Service-header h2{
+        margin: 0 auto;
+    }
+    .service-content-1 .header p ,.service-content-2 .header p{
+        font-size: 16px;
+        margin-top: 30px;
+        margin-left: -5px
+        
+        
+    }
+    #Service-header{
+            width: 100%;
+            margin: 0 auto;
+        }
+        #Service-header h2{
+            width: 80%;
+            margin: 0 auto;
+        }
+}
+
+@media (max-width:350px) {
+    .service-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <img src="./logo (2).ico" style="height: 70%;width: 80%;" alt="logo" />
+          <!-- <img src="./img/shipping/delta4-logo.jpg" alt="logo" /> -->
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="navbar-nav ms-auto py-0"
+            style="font-family: 'Poppins', sans-serif"
+          >
+            <a href="./index.html" class="nav-item nav-link ">Home</a>
+            <a href="#aboutUsContainer" class="nav-item nav-link">About Us</a>
+
+            <a href="#Service-header" class="nav-item nav-link">Our Services</a>
+            <a href="#ourbranch" class="nav-item nav-link">Our Branch</a>
+            <a href="#contact" class="nav-item nav-link">Contact Us</a>
+            <!-- <a href="#" class="nav-item nav-link">Whats App</a> -->
+          </div>
+        </div>
+      </nav>
+
+      <!-- Image Slider -->
+
+      <div
+        id="header-carousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item mobile-styling active">
+            <img src="./img/image2 (2) (1).jpg" alt="" width="100%" height="600px" />
+            <!-- <img class="w-100" alt="Image" id="homePageImage" /> -->
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h1
+                  class="display-1 text-white mb-md-4 animated zoomIn"
+                  id="webAppName1"
+                ></h1>
+                <h5
+                  class="text-white text-uppercase mb-md-4 animated zoomIn"
+                  id="homePageWelcome"
+                ></h5>
+                <!-- <a id="whatsappButton2"
 								class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">WhatsApp</a>
 							<a href="#"
 								class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
 								Us</a> -->
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="./img/slider-1.png" alt="" width="100%" height="600px">
-					<!-- <img class="w-100" alt="Image" id="homePageImage2" /> -->
-					<div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-						<div class="p-3" style="max-width: 900px">
-							<h1 class="display-1 text-white mb-md-4 animated zoomIn" id="webAppName2"></h1>
-							<h5 class="text-white text-uppercase mb-3 animated slideInDown" id="homePageCaption"></h5>
-							<!-- <a id="whatsappButton"
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/slider-1.png" alt="" width="100%" height="600px" />
+            <!-- <img class="w-100" alt="Image" id="homePageImage2" /> -->
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h1
+                  class="display-1 text-white mb-md-4 animated zoomIn"
+                  id="webAppName2"
+                ></h1>
+                <h5
+                  class="text-white text-uppercase mb-3 animated slideInDown"
+                  id="homePageCaption"
+                ></h5>
+                <!-- <a id="whatsappButton"
 								class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">WhatsApp</a>
 							<a href="#"
 								class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
 								Us</a> -->
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<!-- <img src="./img/slider-7.jpg" alt="" width="100%" height="600px"> -->
-					<img src="./img/imahes-1.jpeg" alt="" width="100%" height="600px">
-					<!-- <img class="w-100" alt="Image" id="homePageImage2" /> -->
-					<div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-						<div class="p-3" style="max-width: 900px">
-							<h1 class="display-1 text-white mb-md-4 animated zoomIn" id="webAppName2"></h1>
-							<h5 class="text-white text-uppercase mb-3 animated slideInDown" id="homePageCaption"></h5>
-							<!-- <a id="whatsappButton"
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <!-- <img src="./img/slider-7.jpg" alt="" width="100%" height="600px"> -->
+            <img src="./img/imahes-1.jpeg" alt="" width="100%" height="600px" />
+            <!-- <img class="w-100" alt="Image" id="homePageImage2" /> -->
+            <div
+              class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+            >
+              <div class="p-3" style="max-width: 900px">
+                <h1
+                  class="display-1 text-white mb-md-4 animated zoomIn"
+                  id="webAppName2"
+                ></h1>
+                <h5
+                  class="text-white text-uppercase mb-3 animated slideInDown"
+                  id="homePageCaption"
+                ></h5>
+                <!-- <a id="whatsappButton"
 								class="btn btn-success py-md-3 px-md-5 me-3 animated slideInLeft">WhatsApp</a>
 							<a href="#"
 								class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
 								Us</a> -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-	</div>
-	<br>
-	
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <br />
 
-	<!-- About Start -->
-	<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="aboutUsContainer">
-		<div class="container py-5">
-			<div class="row g-5">
-				<div class="col-lg-7">
-					<div class="about-header"> <h2>ABOUT US</h2></div>
-					
-					<!-- <div class="section-title position-relative pb-3 mb-5">
+    <!-- About Start -->
+    <div
+      class="container-fluid py-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      id="aboutUsContainer"
+    >
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="about-header"><h2 style="color: white;">ABOUT US</h2></div>
+
+            <!-- <div class="section-title position-relative pb-3 mb-5">
 						<h5 class="fw-bold text-primary text-uppercase">About Us</h5>
 						<h1 class="mb-0" id="aboutUsHeader"></h1>
 					</div> -->
-					<p class="mb-4" id="aboutUsCaption" style="font-family: 'Poppins', sans-serif;">
-						Established in 2019, Delta Shipping Agencies has developed into one of the best shipping companies in Middle East. Our team of Professionals are having of more than 20 years of experience in the shipping industry and Qatar market. Our key of success is that the DSA is owned and managed by shipping professionals with business knowledge and good market relations. Within this short span Delta Shipping has grown and reached a level from where we could aim to become first choice marine company in Qatar by enhancing competitive services and solutions to all local and international clients. Here at Delta Shipping Agencies, we take pride in our reputation and record of excellence in both the shipping and logistics arenas and we are expert in blending international standards with local knowledge to facilitate a consistent level of performance to both our customers and principals. We offer full range of shipping services that meet customers growing needs, which include Shipping Lines, NVOCC Agencies, Cargo Agency and 3PLs.
-					</p>
-				</div>
-				<div class="col-lg-5" style="min-height: 500px">
-					<div class="position-relative h-100">
-						<img src="./img/about-1.jpeg"  alt="" width="100%" height="400px">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- About End -->
+            <p
+              class="mb-4"
+              id="aboutUsCaption"
+              style="font-family: 'Poppins', sans-serif"
+            >
+              Established in 2019, Delta Shipping Agencies has developed into
+              one of the best shipping companies in Middle East. Our team of
+              Professionals are having of more than 20 years of experience in
+              the shipping industry and Qatar market. Our key of success is that
+              the DSA is owned and managed by shipping professionals with
+              business knowledge and good market relations. Within this short
+              span Delta Shipping has grown and reached a level from where we
+              could aim to become first choice marine company in Qatar by
+              enhancing competitive services and solutions to all local and
+              international clients. Here at Delta Shipping Agencies, we take
+              pride in our reputation and record of excellence in both the
+              shipping and logistics arenas and we are expert in blending
+              international standards with local knowledge to facilitate a
+              consistent level of performance to both our customers and
+              principals. We offer full range of shipping services that meet
+              customers growing needs, which include Shipping Lines, NVOCC
+              Agencies, Cargo Agency and 3PLs.
+            </p>
+          </div>
+          <div class="col-lg-5" style="min-height: 500px">
+            <div class="position-relative h-100">
+              <img
+                src="./img/about-1.jpeg"
+                alt=""
+                width="100%"
+                height="400px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
 
-	<!-- Services Start -->
-	<div id="Service-header"> 
-		<h2>OUR SERVICES</h2>
-	</div>
-	<div class="service-content">
-		<div class="service-content-1">
-			<div class="header">
-			<h5>We Provide The <br> Best Solution For <br>Shipping WorldWide. </h5>
-			<p>With highly experienced and specialized shipping professionals with more than 20 years of experience in Qatar having in-depth, export knowledge of local & over-seas regulations and customs procedures.</p>
-			</div>
-		</div>
-		<div class="service-content-2">
-			<div class="header">
-			<h5>Welcome! Our culture <br> is Service Excellence. </h5>
-				<p>We approach every challenge positively and professionally. Our service is service excellence and we are committed to provide best rates and transit times to our customers. </p>
-		</div>
-		</div>
-	</div>
-	<div>
-		<img src="./img/slider-7.jpg" alt="" width="100%" height="500px">
-	</div>
-	
-<!-- Services End -->
+    <!-- Services Start -->
+    <div id="Service-header" style="margin-top: -90px">
+      <h2>OUR SERVICES</h2>
+    </div>
+    <div class="service-content">
+      <div class="service-content-1">
+        <div class="header">
+          <h5 style="color: #1e2235;">
+            We Provide The <br />
+            Best Solution For <br />Shipping WorldWide.
+          </h5>
+          <p>
+            With highly experienced and specialized shipping professionals with
+            more than 20 years of experience in Qatar having in-depth, export
+            knowledge of local & over-seas regulations and customs procedures.
+          </p>
+        </div>
+      </div>
+      <div class="service-content-2">
+        <div class="header">
+          <h5>
+            Welcome! Our culture <br />
+            is Service Excellence.
+          </h5>
+          <p>
+            We approach every challenge positively and professionally. Our
+            service is service excellence and we are committed to provide best
+            rates and transit times to our customers.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="./img/slider-7.jpg" alt="" width="100%" height="500px" />
+    </div>
 
-	<!-- Our Activities Start -->
+    <!-- Services End -->
 
-	<div id="activities"><br>
-		<h2>OUR ACTIVITIES</h2>
-		<div class="active-container">	
-			<div class="active-content" id="Shipping-1">
-				<img src="./img/shipping/pexels-photo-1.jpeg" alt="" width="100%"><br>
-				<h3 id="FRIEGHTFORWARDING">FRIEGHT FORWARDING:</h3>
-				<p>With our wide variety of Agents and their unin-terrupted services, we manage cargo on behalf of shippers. We have global coverage with flexible sailings,  freight  pick-ups, customs clearance and cargos are delivered on time.</p>
-			</div>
-			<div class="active-content-1">
-				<h3 id="Shipping">SHIPPING AGENCY:</h3>
-				<p>Shipping services has been thhe core activity of Delta Shipping Agency since established in 2019. Being one of the most experienced  and leading agents in Qatar, we are competent to provide shipping agency services for our principals.</p>
-				<img src="./img/shipping/Transportation.jpg" alt="" width="100%">
-			</div>
-		</div>
-		<div class="active-container">	
-			<div class="active-content">
-				<img src="./img/aerospace-logistics-1.jpg" alt="" width="100%"><br>
-				<h3 id="AirFrieght">AIR FRIEGHT:</h3>
-				<p>Fast moving, challenging and flexible. You want your shipments to fly in commercial aircraft or require specialist freighter aircraft to carry them, we have a team of experienced airfreight experts to ensure safety and timely delivery of your goods.</p>
-			</div>
-			<div class="active-content-1">
-				<h3 id="Project">PROJECT CARGO:</h3>
-				<p>We manage all processes related to domestic and international transportation of cargo moments on behalf of our customers to make them competitive in the market with high reputation.</p>
-				<img src="./img/slider-5.jpeg" alt="" width="100%" >
-			</div>
-		</div>
-		<div class="active-container">	
-			<div class="active-content">
-				<img src="./img/custom-2.jpg" alt="" width="100%" height="300px"><br>
-				<h3>CUSTOMS CLEARANCE:</h3>
-				<p>Experience to provide you with the right information to take right decisions on how best to import or export your cargo hassle-free by fulfilling all the local and international statutory requirements.</p>
-			</div>
-			<div class="active-content-1">
-				<h3 id="Transport">TRANSPORT SERVICES:</h3>
-				<p>Whether you are global or local, asset or non-asset based, move shipments by air, ocean, ground or any combination in-between, we are ready for the transportation challenges.</p>
-				<img src="./img/trailer.jpg" alt="" width="100%">
-			</div>
-		</div>
-	</div><br>
+    <!-- Our Activities Start -->
 
-	
-	<div class="delivery-container">
-		<div>
-			<div class="dilivery-content">
-				<div> <i class="fa-solid fa-truck"></i></div>
-				<div class="deliver-header">
-					<h3>Deliveries</h3>
-					<p>We provide the best Air(Flight), road and maritime delivery services across the world and united states.</p>
-			`	</div>
-			</div>
-			<div class="dilivery-content">
-				<div> <i class="fa-solid fa-cube "></i></div>
-				<div>
-					<h3>International Shipment</h3>
-					<p>We ship both internationaly and locally within the nation.</p>
-				</div>
-			</div>
-		</div>
-		<div>
-			<img src="./img/shipping/home3-services.jpg" alt="" width="300px" height="300px" >
-		</div>
-		<div>
-			<div class="dilivery-content">
-				<div><i class="fa-solid fa-square-up-right"></i></div>
-				<div>
-					<h3>Our Principles</h3>
-					<p>We provide the best and simplest shipping principles, we provide trackings for all your packages.</p>
-				</div>
-			</div>
-			<div class="dilivery-content">
-				<div><i class="fa-brands fa-ups"></i></div>
-				<div>
-					<h3> We Are Unique</h3>
-					<p>Our services are unique, we guide and updates you through out the shipping period.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="activities">
+      <br />
+      <h2 >OUR ACTIVITIES</h2>
+      <div class="active-container">
+        <div class="active-content" id="Shipping-1">
+          <img
+            src="./img/shipping/pexels-photo-1.jpeg"
+            alt=""
+            width="100%"
+          /><br />
+          <h3 id="FRIEGHTFORWARDING" style="color: #1e2235;">FRIEGHT FORWARDING:</h3>
+          <p>
+            With our wide variety of Agents and their unin-terrupted services,
+            we manage cargo on behalf of shippers. We have global coverage with
+            flexible sailings, freight pick-ups, customs clearance and cargos
+            are delivered on time.
+          </p>
+        </div>
+        <div class="active-content-1">
+          <h3 id="Shipping" style="color: #1e2235;">SHIPPING AGENCY:</h3>
+          <p>
+            Shipping services has been thhe core activity of Delta Shipping
+            Agency since established in 2019. Being one of the most experienced
+            and leading agents in Qatar, we are competent to provide shipping
+            agency services for our principals.
+          </p>
+          <img src="./img/shipping/Transportation.jpg" alt="" width="100%" />
+        </div>
+      </div>
+      <div class="active-container">
+        <div class="active-content">
+          <img
+            src="./img/aerospace-logistics-1.jpg"
+            alt=""
+            width="100%"
+          /><br />
+          <h3 id="AirFrieght" style="color: #1e2235;">AIR FRIEGHT:</h3>
+          <p>
+            Fast moving, challenging and flexible. You want your shipments to
+            fly in commercial aircraft or require specialist freighter aircraft
+            to carry them, we have a team of experienced airfreight experts to
+            ensure safety and timely delivery of your goods.
+          </p>
+        </div>
+        <div class="active-content-1">
+          <h3 id="Project"style="color: #1e2235;">PROJECT CARGO:</h3>
+          <p>
+            We manage all processes related to domestic and international
+            transportation of cargo moments on behalf of our customers to make
+            them competitive in the market with high reputation.
+          </p>
+          <img src="./img/slider-5.jpeg" alt="" width="100%" />
+        </div>
+      </div>
+      <div class="active-container">
+        <div class="active-content">
+          <img
+            src="./img/custom-2.jpg"
+            alt=""
+            width="100%"
+            height="300px"
+          /><br />
+          <h3 style="color: #1e2235;">CUSTOMS CLEARANCE:</h3>
+          <p>
+            Experience to provide you with the right information to take right
+            decisions on how best to import or export your cargo hassle-free by
+            fulfilling all the local and international statutory requirements.
+          </p>
+        </div>
+        <div class="active-content-1">
+          <h3 id="Transport" style="color: #1e2235;">TRANSPORT SERVICES:</h3>
+          <p>
+            Whether you are global or local, asset or non-asset based, move
+            shipments by air, ocean, ground or any combination in-between, we
+            are ready for the transportation challenges.
+          </p>
+          <img src="./img/trailer.jpg" alt="" width="100%" />
+        </div>
+      </div>
+    </div>
+    <br />
 
-	<div class="content-div">
-		<img src="./img/shipping/shipping-cargo-containers.jpg" alt="" width="100%" height="450px">
-		<!-- <img src="./img/shipping/pexels-photo-1.jpeg" alt="" width="100%" height="450px"> -->
-		<div class="container-div"><br>
-			<h2>WHO WE ARE ?</h2><br>
-			<p>DSA-Q is a rapidly expanding Shipping company in Qatar with customer friendly polices. We believe Customers are the life line of our business and we strive to meet and exceed customer expections by developing and delivering highly attractive and innivative products and services to build our customer relationships. Keen to establish long-term alliances with our clients by developing a through understanding of their bussiness goals and employing  cutting edge technology solutions that can enable us to be a long term logistics partner of their choice.</p>
-		</div>
-	</div>
+    <div class="delivery-container">
+      <div>
+        <div class="dilivery-content">
+          <div><i class="fa-solid fa-truck"></i></div>
+          <div class="deliver-header">
+            <h3>Deliveries</h3>
+            <p>
+              We provide the best Air(Flight), road and maritime delivery
+              services across the world and united states.
+            </p>
+            `
+          </div>
+        </div>
+        <div class="dilivery-content">
+          <div><i class="fa-solid fa-cube"></i></div>
+          <div>
+            <h3>International Shipment</h3>
+            <p>We ship both internationaly and locally within the nation.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img
+          src="./img/shipping/home3-services.jpg"
+          alt=""
+          width="300px"
+          height="300px"
+        />
+      </div>
+      <div>
+        <div class="dilivery-content">
+          <div><i class="fa-solid fa-square-up-right"></i></div>
+          <div>
+            <h3 >Our Principles</h3>
+            <p>
+              We provide the best and simplest shipping principles, we provide
+              trackings for all your packages.
+            </p>
+          </div>
+        </div>
+        <div class="dilivery-content">
+          <div><i class="fa-brands fa-ups"></i></div>
+          <div>
+            <h3>We Are Unique</h3>
+            <p>
+              Our services are unique, we guide and updates you through out the
+              shipping period.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<!-- Our Activities End -->
+    <div class="content-div">
+      <img
+        src="./img/shipping/shipping-cargo-containers.jpg"
+        alt=""
+        width="100%"
+        height="450px"
+      />
+      <!-- <img src="./img/shipping/pexels-photo-1.jpeg" alt="" width="100%" height="450px"> -->
+      <div class="container-div">
+        <br />
+        <h2>WHO WE ARE ?</h2>
+        <br />
+        <p>
+          DSA-Q is a rapidly expanding Shipping company in Qatar with customer
+          friendly polices. We believe Customers are the life line of our
+          business and we strive to meet and exceed customer expections by
+          developing and delivering highly attractive and innivative products
+          and services to build our customer relationships. Keen to establish
+          long-term alliances with our clients by developing a through
+          understanding of their bussiness goals and employing cutting edge
+          technology solutions that can enable us to be a long term logistics
+          partner of their choice.
+        </p>
+      </div>
+    </div>
 
-	
+    <!-- Our Activities End -->
 
-	<!-- Contact Start -->
+    <!--  -->
+    <div class="transport-content">
+      <div class="transport">
+        <div class="transport-image">
+          <img src="./img/shipping/box.png" alt="" width="100%" />
+          <!-- <img src="./img/shipping/form-left-layer.png" alt="" width="100%"> -->
+        </div>
+        <div class="transport-header">
+          <h1>FLIGHT AND OVERLAND</h1>
+          <p>
+            We provide Flight and inland transportation, and cross borders as
+            well. We have a well-established flight and cargo distribution
+            network covering many locations. Hence, guaranteeing safe, cost
+            effective and time bound transportation services to all our clients.
+            Be it within the city of its operation or across the country, we
+            undertake movement of any type of cargo, dimension or size, within
+            time with utmost safety.
+          </p>
+          <p>
+            Our service commitment to clients and partners are maintained
+            through high standards of communication. Our goal is to constantly
+            improve upon complex processes while maintaining the cost
+            efficiency.
+          </p>
+          <!-- <button>More</button> -->
+        </div>
+      </div>
+    </div>
 
-	<section id="contact" class="contact">
-		<div class="container" data-aos="fade-up">
-		  <div>
-			<div id="contact-header">
-				<h2>CONTACT US</h2>
-			</div>
-
-			<iframe  style="border:0; width: 100%; height: 270px;"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28855.33875635049!2d51.5094751443228!3d25.306980966367064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5111c1d4a7b%3A0x381b6c3df03c5f46!2sMIA%20Park!5e0!3m2!1sen!2sin!4v1702873094350!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
-		  </div>
-  
-		  <div class="row mt-5">
-			<div class="col-lg-4">
-			  <div class="info">
-				<div class="address">
-				  <i class="bi bi-geo-alt"></i>
-				  <h4>Location:</h4>
-				  <p>POB : 60287, Office No : 901, Regency Business Center 2, Old Customs Building, Opposite to MIA Park, Corniche Road, Doha-Qatar.</p>
-					<!-- <p>www.dsaqatar.com </p> -->
-				</div>
-  
-				<div class="email">
-				  <i class="bi bi-envelope"></i>
-				  <h4>Email:</h4>
-				  <p>info@example.com</p>
-				</div>
-  
-				<div class="phone">
-				  <i class="bi bi-phone"></i>
-				  <h4>Tel:</h4>
-				  <p>+974 4468 4086</p>
-				  <p></p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-lg-8 mt-5 mt-lg-0">
-			  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-				<div class="row gy-2 gx-md-3">
-				  <div class="col-md-6 form-group">
-					<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-				  </div>
-				  <div class="col-md-6 form-group">
-					<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-				  </div>
-				  <div class="form-group col-12">
-					<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-				  </div>
-				  <div class="form-group col-12">
-					<textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-				  </div>
-				  <div class="my-3 col-12">
-					<div class="loading">Loading</div>
-					<div class="error-message"></div>
-					<div class="sent-message">Your message has been sent. Thank you!</div>
-				  </div>
-				  <div class="text-center col-3"><button type="submit">Send Message</button></div>
-				</div>
-			  </form>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	  <!-- Contact End -->
-
-	<!--  -->
-	<div class="transport-content">
-		<div class="transport">
-			<div class="transport-image">
-				<img src="./img/shipping/box.png" alt="" width="100%">
-				<!-- <img src="./img/shipping/form-left-layer.png" alt="" width="100%"> -->
-			</div>
-			<div class="transport-header">
-				<h1>FLIGHT AND OVERLAND</h1>
-				<p> We provide Flight and inland transportation, and cross borders as well. We have a well-established flight and cargo distribution network covering many locations. Hence, guaranteeing safe, cost effective and time bound transportation services to all our clients.
-					Be it within the city of its operation or across the country, we undertake movement of any type of cargo, dimension or size, within time with utmost safety.</p>
-					<p>
-					Our service commitment to clients and partners are maintained through high standards of communication. Our goal is to constantly improve upon complex processes while maintaining the cost efficiency.</p>
-					<!-- <button>More</button> -->
-			</div>
-		</div>
-	</div>
-
-	<!--  Testimonials Start-->
-	<!-- <div id="testimonials">
+    <!--  Testimonials Start-->
+    <!-- <div id="testimonials">
 		<h2>TESTIMONIAL</h2>
 		<p>we are happy to work with each and every one of you thanks so much for your reviews. </p>
 		<div class="testimonials-container">
@@ -492,142 +1370,399 @@
 		</div>
 	</div> -->
 
-	<div class="summary-background">
-		<section class="summary">
-			<div class="summary-container">
-				<img src="./img/b-2.jpeg" alt="" width="100%" height="500px">
-			</div>
-			<div class="summary-content">
-				<h1>Summary</h1>
-				<p>Our global network and a team of well experienced shipping professionals in turn shape our commitment and dedication to operational excellence.</p>
-			</div>
-		</section>
-		</div>
-	
-	<!-- Footer Start -->
-	<div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-		<div class="container">
-			<div class="row gx-5">
-				<div class="col-lg-4 col-md-6 footer-about">
-					<div id="footer-header"
-						class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-						<h5 style="color: white; font-family: 'Poppins', sans-serif;">DELTA SHIPPING AGENCIES</h5>
+    <div class="summary-background">
+      <section class="summary">
+        <div class="summary-container">
+          <img src="./img/b-2.jpeg" alt="" width="100%" height="500px" />
+        </div>
+        <div class="summary-content">
+          <h1>Summary</h1>
+          <p>
+            Our global network and a team of well experienced shipping
+            professionals in turn shape our commitment and dedication to
+            operational excellence.
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- <branch start> -->
+    <div class="containerbranch" >
+      <div class="title" id="ourbranch">
+        <h1 style="color: black">Our Branches</h1>
+        <button onclick="showWorldMap()">World Map</button>
+        <button onclick="showIndiaMap()">India Map</button>
+      </div>
 
-						<!-- <img src="./img/image001.png" alt="" style="width: 270px; height: 180px; border-radius: 20px; color: #fff;"><br>
+      <div class="content-section">
+        <div class="address-section">
+          <!-- Address content -->
+          <!-- Replace this with your address details -->
+          <div class="address-world">
+            <h2 style="color: #1e2235;">Qatar Address</h2>
+            <p>
+              POB : 60287, Office No : 901, Regency Business Center 2, Old
+              Customs Building, Opposite to MIA Park, Corniche Road
+            </p>
+            <p>City:Doha</p> 
+			<p>Country:Qatar</p>
+            <p>Phone Number: +974 4468 4086</p>
+          </div>
+
+          <!-- India Address content (hidden by default) -->
+          <div class="address-india">
+            <h2 style="color: #1e2235;">Cochin Address</h2>
+            <p>
+              Office No : 14/390-F7 | 4th Floor KNA Plaza | Kundannoor Jn |
+              Cochin PO Box : 682304
+            </p>
+            <p>City: Cochin </p> 
+			<p>Country:India</p>
+            <p>Phone Number:0484-352872 / 3516220</p>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <!-- World Map Section -->
+          <section class="world-map" style="display: block">
+            <div class="world-map">
+              <img
+                src="./img/worldmap.png"
+                alt="World map"
+                class="world-map-img"
+                style="max-width: 100%; height: 100%"
+              />
+            </div>
+            <div class="pin Qatar">
+              <span>Qatar</span>
+            </div>
+          </section>
+
+          <!-- India Map Section -->
+          <section class="india-map" style="display: none">
+            <div class="world-map">
+              <!-- Replace this image with your India map -->
+              <img
+                src="./img/ind.png"
+                alt="India map"
+                class="india-map-img"
+                style="max-width: 100%; height: 100%"
+              />
+              <!-- Kochi Pin -->
+              <div class="pin Kochi">
+                <span>Cochin, India</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Start -->
+
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div>
+          <div id="contact-header">
+            <h2 style="color: #1e2235;">CONTACT US</h2>
+          </div>
+
+          <iframe
+            style="border: 0; width: 100%; height: 270px"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28855.33875635049!2d51.5094751443228!3d25.306980966367064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5111c1d4a7b%3A0x381b6c3df03c5f46!2sMIA%20Park!5e0!3m2!1sen!2sin!4v1702873094350!5m2!1sen!2sin"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+         <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <div
+              class="d-flex align-items-center wow fadeIn"
+              data-wow-delay="0.1s"
+            >
+              <div
+                class="bg-primary d-flex align-items-center justify-content-center rounded"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-phone-alt text-white"></i>
+              </div>
+              <div class="ps-4">
+                <h5 class="mb-2" style="color: #1e2235; font-size: 25px; ">Call to ask any question</h5>
+                <h4 class="text-primary mb-0" id="mobile">+974 4468 4086</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="d-flex align-items-center wow fadeIn"
+              data-wow-delay="0.4s"
+            >
+              <div
+                class="bg-primary d-flex align-items-center justify-content-center rounded"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-envelope-open text-white"></i>
+              </div>
+              <div class="ps-3">
+                <h5 class="mb-2"  style="color: #1e2235; font-size: 25px;">Email to get free quote</h5>
+                <h4 class="text-primary mb-0" id="email"> info@dsaqatar.com</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div
+              class="d-flex  wow fadeIn"
+              data-wow-delay="0.8s"
+            >
+              <div
+                class="bg-primary d-flex align-items-center justify-content-center rounded"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-map-marker-alt text-white"></i>
+              </div>
+              <div class="ps-3">
+                <h5 class="mb-2" style="color: #1e2235; font-size: 25px;">Visit our office</h5>
+                <h4 class="text-primary mb-0" id="location">
+			  POB : 60287,<br>
+			  Office No : 901, Regency<br>
+		      Business Center 2,<br>
+			  Old Customs Building,<br>
+			  Opposite to MIA Park,<br>
+			  Corniche Road, Doha-Qatar
+				</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact End -->
+
+    <!-- Footer Start -->
+    <div
+      class="container-fluid bg-dark text-light mt-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+    >
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <div
+              id="footer-header"
+              class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4"
+            >
+              <h5 style="color: white; font-family: 'Poppins', sans-serif">
+                DELTA SHIPPING AGENCIES
+              </h5>
+
+              <!-- <img src="./img/image001.png" alt="" style="width: 270px; height: 180px; border-radius: 20px; color: #fff;"><br>
 						<p style="color: black;">DELTA SHIPPING AGENCIES (DSA) is emerging a leading shipping agent and freight forwarder in Qatar. Our shipping experts offer services that helps businesses to connect extensively throughout the globe.</p> -->
 
-						<a href="index.html" class="navbar-brand">
-						<h6 class="m-0 text-white" id="webAppName"></h6>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-6">
-					<div class="row gx-5">
-						<div class="col-lg-5 col-md-12 pt-5 mb-5">
-							<div class="section-title section-title-sm position-relative pb-3 mb-4">
-								<h4 class="text-light mb-0" style="font-family: 'Poppins', sans-serif;">Get In Touch</h4>
-							</div>
-							<div class="d-flex mb-2 location-section" style="font-family: 'Roboto', sans-serif;">
-								<i class="bi bi-geo-alt text-primary me-2"></i>
-								<p class="mb-0 contact-data">POB : 6-287, Office No : 901, Regency Business Center 2 , Old Customs Building, Opposite to MIA Park, Corniche Road, Doha-Qatar.</p>
-							</div>
-							<div class="d-flex mb-2 email-section" style="font-family: 'Roboto', sans-serif;" >
-								<i class="bi bi-envelope-open text-primary me-2"></i>
-								<p class="mb-0 contact-data">
-									info@dsaqatar.com
-								</p>
-							</div>
-							<div class="d-flex mb-2 email-section" style="font-family: 'Roboto', sans-serif;">
-								<i class="bi bi-telephone text-primary me-2"></i>
-								<p class="mb-0 contact-data">
-									+974 4468 4086
-								</p>
-							</div>
-							<div class="d-flex flex-column mb-2 phone-section2">
-								<!-- <i class="bi bi-telephone text-primary me-2"></i> -->
-								<!-- <p class="mb-0 contact-data2">+974 4468 4086</p> -->
-								<p class="mb-0 contact-data3"></p>
-								<p class="mb-0 contact-data4"></p>
-							</div>
-							<div id="connectWithUsBanner" class="d-flex mt-4" style="display: none"></div>
-						</div>
-						<div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
-							<div class="section-title section-title-sm position-relative pb-3 mb-4">
-								<h4 class="text-light mb-0" style="font-family: 'Poppins', sans-serif;">Quick Links</h4>
-							</div>
-							<div class="link-animated d-flex flex-column justify-content-start" style="font-family: 'Roboto', sans-serif;">
-								<a class="text-light mb-2" href="./index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-								<a class="text-light mb-2" href="#aboutUsContainer"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-								
-								
-								<a class="text-light mb-2" href="#Service-header"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
-								<a class="text-light mb-2" href="#contact"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-								<!-- <a class="text-light mb-2" href=""><i class="bi bi-arrow-right text-primary me-2"></i>Services</a> -->
+              <a href="index.html" class="navbar-brand">
+                <h6 class="m-0 text-white" id="webAppName"></h6>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-6">
+            <div class="row gx-5">
+              <div class="col-lg-5 col-md-12 pt-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4
+                    class="text-light mb-0"
+                    style="font-family: 'Poppins', sans-serif"
+                  >
+                    Get In Touch
+                  </h4>
+                </div>
+                <div
+                  class="d-flex mb-2 location-section"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  <i class="bi bi-geo-alt text-primary me-2"></i>
+                  <p class="mb-0 contact-data">
+                    POB : 6-287, Office No : 901, Regency Business Center 2 ,
+                    Old Customs Building, Opposite to MIA Park, Corniche Road,
+                    Doha-Qatar.
+                  </p>
+                </div>
+                <div
+                  class="d-flex mb-2 email-section"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  <i class="bi bi-envelope-open text-primary me-2"></i>
+                  <p class="mb-0 contact-data">info@dsaqatar.com</p>
+                </div>
+                <div
+                  class="d-flex mb-2 email-section"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  <i class="bi bi-telephone text-primary me-2"></i>
+                  <p class="mb-0 contact-data">+974 4468 4086</p>
+                </div>
+                <div class="d-flex flex-column mb-2 phone-section2">
+                  <!-- <i class="bi bi-telephone text-primary me-2"></i> -->
+                  <!-- <p class="mb-0 contact-data2">+974 4468 4086</p> -->
+                  <p class="mb-0 contact-data3"></p>
+                  <p class="mb-0 contact-data4"></p>
+                </div>
+                <div
+                  id="connectWithUsBanner"
+                  class="d-flex mt-4"
+                  style="display: none"
+                ></div>
+              </div>
+              <div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4
+                    class="text-light mb-0"
+                    style="font-family: 'Poppins', sans-serif"
+                  >
+                    Quick Links
+                  </h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  <a class="text-light mb-2" href="./index.html"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+                  >
+                  <a class="text-light mb-2" href="#aboutUsContainer"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>About
+                    Us</a
+                  >
 
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-							<div class="section-title section-title-sm position-relative pb-3 mb-4">
-								<h4 class="text-light mb-0" style="font-family: 'Poppins', sans-serif;">OUR ACTIVITIES</h4>
-							</div>
-							<div class="link-animated d-flex flex-column justify-content-start" style="font-family: 'Roboto', sans-serif;">
-						
-								<a class="text-light mb-2" href="#activities"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Shipping Agency</a>
-								<a class="text-light mb-2" href="#Shipping-1"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Frieght Forwarding</a>
-								<a class="text-light mb-2" href="#FRIEGHTFORWARDING"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Project Cargo</a>
-								<a class="text-light mb-2" href="#Project"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Air Frieght</a>
-								<a class="text-light mb-2" href="#AirFrieght"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Transport Services</a>
-								<a class="text-light mb-2" href="#Transport"><i
-										class="bi bi-arrow-right text-primary me-2"></i>Customs Clearance</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid text-white" style="background: #061429">
-		<div class="container text-center">
-			<div class="row justify-content-end">
-				<div class="col-lg-8 col-md-6">
-					<div class="d-flex align-items-center justify-content-center" style="height: 75px ;font-family: 'Roboto', sans-serif;">
-						<p class="mb-0">
-							&copy; Copyright Delta Shipping Agencies, All Rights Reserved
-							<a class="text-white border-bottom" href="#" id="footerMessage"></a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Footer End -->
+                  <a class="text-light mb-2" href="#Service-header"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+                    Services</a
+                  >
+                  <a class="text-light mb-2" href="#contact"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Contact
+                    Us</a
+                  >
+                  <!-- <a class="text-light mb-2" href=""><i class="bi bi-arrow-right text-primary me-2"></i>Services</a> -->
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                <div
+                  class="section-title section-title-sm position-relative pb-3 mb-4"
+                >
+                  <h4
+                    class="text-light mb-0"
+                    style="font-family: 'Poppins', sans-serif"
+                  >
+                    OUR ACTIVITIES
+                  </h4>
+                </div>
+                <div
+                  class="link-animated d-flex flex-column justify-content-start"
+                  style="font-family: 'Roboto', sans-serif"
+                >
+                  <a class="text-light mb-2" href="#activities"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Shipping
+                    Agency</a
+                  >
+                  <a class="text-light mb-2" href="#Shipping-1"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Frieght
+                    Forwarding</a
+                  >
+                  <a class="text-light mb-2" href="#FRIEGHTFORWARDING"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Project
+                    Cargo</a
+                  >
+                  <a class="text-light mb-2" href="#Project"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Air
+                    Frieght</a
+                  >
+                  <a class="text-light mb-2" href="#AirFrieght"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i
+                    >Transport Services</a
+                  >
+                  <a class="text-light mb-2" href="#Transport"
+                    ><i class="bi bi-arrow-right text-primary me-2"></i>Customs
+                    Clearance</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429">
+      <div class="container text-center">
+        <div class="row justify-content-end">
+          <div class="col-lg-8 col-md-6">
+            <div
+              class="d-flex align-items-center justify-content-center"
+              style="height: 75px; font-family: 'Roboto', sans-serif"
+            >
+              <p class="mb-0">
+                &copy; Copyright Delta Shipping Agencies, All Rights Reserved
+                <a
+                  class="text-white border-bottom"
+                  href="#"
+                  id="footerMessage"
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
 
-	<!-- Back to Top -->
-	<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
-	<!-- JavaScript Libraries -->
-	<script src="lib/code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="lib/cdn.jsdelivr.net/npm/bootstrap%405.0.0/dist/js/bootstrap.bundle.min.js"></script> 
-	<script src="lib/wow/wow.min.js"></script>
-	<script src="lib/easing/easing.min.js"></script>
-	<script src="lib/waypoints/waypoints.min.js"></script>
-	<script src="lib/counterup/counterup.min.js"></script>
-	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="lib/code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="lib/cdn.jsdelivr.net/npm/bootstrap%405.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
 
-	<!-- Template Javascript -->
-	<script type="module" src="js/index.js"></script>
-	<script type="module" src="js/script.js"></script>
-	<script src="js/main.js"></script>
-	<script type="module" src="./js/displayticker.js"></script>
+    <!-- Template Javascript -->
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="./js/displayticker.js"></script>
+    <script>
+      function showWorldMap() {
+        document.querySelector(".world-map").style.display = "block";
+        document.querySelector(".india-map").style.display = "none";
+      }
 
-</body>
+      function showIndiaMap() {
+        document.querySelector(".world-map").style.display = "none";
+        document.querySelector(".india-map").style.display = "block";
+      }
+      // Function to show world map and address
+      function showaddressworld() {
+        document.getElementById(".address-world").style.display = "block";
+        document.getElementById(".address-india").style.display = "none";
+      }
 
+      // Function to show India map and address
+      function showaddressindia() {
+        document.getElementById(".address-world").style.display = "none";
+        document.getElementById(".address-india").style.display = "block";
+      }
+    </script>
+  </body>
 </html>
