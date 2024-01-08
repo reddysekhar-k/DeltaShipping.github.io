@@ -4,6 +4,8 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ /* Navbar 4312 */
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -4307,6 +4309,7 @@ fieldset:disabled .btn {
     border-top-right-radius: 0
 }
 
+/* Navbar */
 
 .nav {
     display: flex;
@@ -4803,6 +4806,8 @@ fieldset:disabled .btn {
 .navbar-dark .navbar-text a:focus {
     color: #fff
 }
+
+
 
 .card {
     position: relative;
