@@ -4310,7 +4310,7 @@ fieldset:disabled .btn {
 
 .nav {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding-left: 0;
     margin-bottom: 0;
     list-style: none
@@ -4514,6 +4514,7 @@ fieldset:disabled .btn {
     max-height: var(--bs-scroll-height, 75vh);
     overflow-y: auto
 }
+
 
 @media (min-width: 576px) {
     .navbar-expand-sm {
