@@ -4307,6 +4307,7 @@ fieldset:disabled .btn {
     border-top-right-radius: 0
 }
 
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -4417,7 +4418,7 @@ fieldset:disabled .btn {
 .navbar {
     position: relative;
     display: flex;
-     /* flex-wrap: wrap */
+     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding-top: .5rem;
